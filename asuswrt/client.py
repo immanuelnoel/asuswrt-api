@@ -93,6 +93,33 @@ class AsusWRT:
         '''
         return self.get('wanlink_state(appobj)')
 
+    def get_wan_details(self):
+        ''''
+        Get WAN details
+        '''
+        returnList = {}
+
+        # Dual WAN status
+        returnList.update(self.get('nvram_get("wans_dualwan")'))
+        returnList.update(self.get('nvram_get("wans_lanport")'))
+
+        # WAN port enable / disable status
+        returnList.update(self.get('nvram_get("wan0_enable")'))
+        returnList.update(self.get('nvram_get("wan1_enable")'))
+
+        # Primary 
+        returnList.update(self.get('nvram_get("wan0_primary")'))
+        returnList.update(self.get('nvram_get("wan1_primary")'))
+
+        # Load Balancer
+        returnList.update(self.get('nvram_get("wans_mode")'))
+
+        # IP Address - 0.0.0.0 if not assigned
+        returnList.update(self.get('nvram_get("wan0_ipaddr")'))
+        returnList.update(self.get('nvram_get("wan1_ipaddr")'))
+
+        return returnList
+
     def get_online_clients(self):
         '''
         Get online clients.

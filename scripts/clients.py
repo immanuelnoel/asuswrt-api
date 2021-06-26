@@ -2,8 +2,9 @@ import sys
 sys.path.append('../')
 
 from asuswrt import AsusWRT
+import creds
 
-router = AsusWRT(url='http://192.168.1.1', username='admin', password='admin')
+router = AsusWRT(url=creds.admin['url'], username=creds.admin['username'], password=creds.admin['password'])
 clients = router.get_online_clients()
 
 for client in clients:

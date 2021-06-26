@@ -1,0 +1,6 @@
+# Ignore pyc
+__pycache__
+*.pyc
+
+# Ignore credentials
+scripts/creds.py
