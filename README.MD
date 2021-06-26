@@ -1,10 +1,10 @@
 # ASUS WRT API  
-Forked from https://github.com/vrachieru/asuswrt-api   
 
 ## What
-Fetches information from a local ASUS WRT router. 
+Forked from https://github.com/vrachieru/asuswrt-api.    
+Improved to fetch information from a local ASUS WRT router. and setup pseudo monitors for WAN connection status. 
 
-Pseudo monitors setup for WAN connection status. Useful when a Load Balancer is setup between two WAN connections, and when 1/2 WANs are down. This is easily missed unless one checks the admin UI.   
+Useful when a Load Balancer is setup between two WAN connections, and when 1/2 WANs are down. This is easily missed unless one checks the admin UI.   
 
 Extended to send a telegram message when the alert fires. A telegram bot (https://core.telegram.org/bots) needs to be setup in prior. 
 
